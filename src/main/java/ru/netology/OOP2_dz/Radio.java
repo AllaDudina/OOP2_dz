@@ -1,7 +1,9 @@
 package ru.netology.OOP2_dz;
 
 public class Radio {
-    public int currentVolume;
+    private int currentVolume;
+    private int currentStations;
+
 
     public int getCurrentVolume() {
         return currentVolume;
@@ -29,7 +31,6 @@ public class Radio {
         currentVolume = newCurrentVolume;
     }
 
-    public int currentStations;
 
     public int getCurrentStations() {
         return currentStations;

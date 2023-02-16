@@ -99,9 +99,9 @@ public class RadioTest {
     public void shouldTestStations() {
         Radio stations = new Radio();
 
-        stations.setCurrentStations(9);
+        stations.setCurrentStations(3);
 
-        int expected = 9;
+        int expected = 3;
         int actual = stations.getCurrentStations();
 
         Assertions.assertEquals(expected, actual);
