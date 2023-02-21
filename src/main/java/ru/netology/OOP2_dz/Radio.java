@@ -5,20 +5,19 @@ public class Radio {
     private int minVolume = 0;
     private int maxVolume = 100;
     private int currentVolume = minVolume;
+    private int stations = 10;
     private int minStations = 0;
-    private  int maxStations = 9;
+    private int maxStations = stations - 1;
     private int currentStations = minStations;
 
-    public  Radio (int minVolume, int maxVolume, int minStations, int maxStations) {
-        this.minVolume = minVolume;
-        this.maxVolume = maxVolume;
-        this.currentVolume = minVolume;
-        this.minStations = minStations;
-        this.maxStations = maxStations;
-        this.currentStations=minStations;
 
-     }
+    public Radio() {
+    }
 
+    public Radio(int stations) {
+        this.stations = stations;
+
+    }
 
     public int getCurrentVolume() {
         return currentVolume;
@@ -38,7 +37,7 @@ public class Radio {
         if (currentVolume < maxVolume) {
             currentVolume++;
         }
-        }
+    }
 
     public void reduceVolume() {
         if (currentVolume > minVolume) {
@@ -49,6 +48,25 @@ public class Radio {
     public int getCurrentStations() {
         return currentStations;
     }
+
+    public int getStations() {
+        return stations;
+    }
+
+    public void setMaxStations(int stations) {
+        maxStations = stations - 1;
+
+    }
+
+    public int getMaxStations() {
+        return maxStations;
+    }
+
+    public int setStations() {
+        return stations;
+    }
+
+
     public void setCurrentStations(int newCurrentStations) {
         if (newCurrentStations > maxStations) {
             newCurrentStations = minStations;
@@ -58,6 +76,7 @@ public class Radio {
         }
         currentStations = newCurrentStations;
     }
+
     public void nextStations() {
         currentStations++;
         if (currentStations > maxStations) {
@@ -66,9 +85,10 @@ public class Radio {
     }
 
     public void prevStations() {
-            currentStations --;
+        currentStations--;
         if (currentStations <= minStations) {
             currentStations = maxStations;
         }
     }
 }
+

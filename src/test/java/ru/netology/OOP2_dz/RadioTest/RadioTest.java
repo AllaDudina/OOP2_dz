@@ -1,14 +1,18 @@
 package ru.netology.OOP2_dz.RadioTest;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.OOP2_dz.Radio;
 
+import java.awt.image.Raster;
 
 
 public class RadioTest {
-    Radio radio = new Radio(0,100, 0, 9);
+    Radio radio = new Radio();
+    Radio radioStations = new Radio(10);
 
     @Test
+
     public void shouldNoSetVolumeAboveMAx() {
 
         radio.setCurrentVolume(101);
@@ -58,9 +62,23 @@ public class RadioTest {
         Assertions.assertEquals(99, radio.getCurrentVolume());
 
     }
+
+    @Test
+    public void shouldSetStations() {
+        radioStations.setStations();
+        Assertions.assertEquals(10, radioStations.getStations());
+    }
+
+    @Test
+    public void shouldSetMaxStations() {
+        radioStations.setMaxStations(15);
+
+        Assertions.assertEquals(14, radioStations.getMaxStations());
+    }
+
     @Test
 
-    public void shouldTestStations() {
+    public void shouldTestCurrentStations() {
 
         radio.setCurrentStations(3);
 
@@ -109,6 +127,7 @@ public class RadioTest {
         Assertions.assertEquals(9, radio.getCurrentStations());
 
     }
+
     @Test
     public void shouldPrevStations() {
         radio.setCurrentStations(6);
