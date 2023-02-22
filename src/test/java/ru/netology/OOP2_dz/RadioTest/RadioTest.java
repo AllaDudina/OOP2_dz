@@ -9,7 +9,6 @@ import java.awt.image.Raster;
 
 public class RadioTest {
     Radio radio = new Radio();
-    Radio radioStations = new Radio(10);
 
     @Test
 
@@ -64,16 +63,21 @@ public class RadioTest {
     }
 
     @Test
+
     public void shouldSetStations() {
-        radioStations.setStations();
-        Assertions.assertEquals(10, radioStations.getStations());
+        Radio radioStations = new Radio(15);
+
+        {
+            Assertions.assertEquals(15, radioStations.getStations());
+            Assertions.assertEquals(14, radioStations.getMaxStations());
+        }
     }
 
-    @Test
-    public void shouldSetMaxStations() {
-        radioStations.setMaxStations(15);
 
-        Assertions.assertEquals(14, radioStations.getMaxStations());
+    @Test
+    public void shouldTestMaxStations() {
+        radio.setMaxStations();
+        Assertions.assertEquals(9, radio.getMaxStations());
     }
 
     @Test

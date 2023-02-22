@@ -16,6 +16,7 @@ public class Radio {
 
     public Radio(int stations) {
         this.stations = stations;
+        maxStations = stations - 1;
 
     }
 
@@ -53,17 +54,11 @@ public class Radio {
         return stations;
     }
 
-    public void setMaxStations(int stations) {
+    public void setMaxStations() {
         maxStations = stations - 1;
-
     }
-
     public int getMaxStations() {
         return maxStations;
-    }
-
-    public int setStations() {
-        return stations;
     }
 
 
